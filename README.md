@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/crazycodr/previous-current-iterator.svg)](https://travis-ci.org/crazycodr/previous-current-iterator)
+
 # Previous/Current iterator
 Allows iteration over an array but returns two items at a time stepping by one item at a time. Thus, the iterator for
 
