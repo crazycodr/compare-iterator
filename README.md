@@ -28,6 +28,10 @@ To install it, just include this requirement into your composer.json
 ```
 And then run composer install/update as necessary.
 
+# Supports
+
+Only PHP 5.5 or more can be supported due to the fact that key() can only return arrays starting with PHP 5.5!
+
 # Examples
 
 To use the PreviousCurrentIterator, just instanciate a copy with an array and foreach it!
