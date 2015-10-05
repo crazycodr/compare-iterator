@@ -2,8 +2,11 @@
 namespace CrazyCodr\Iterators;
 
 /**
- * DoubleSequenceIterator returns the previous and current item as it iterators, perfect to compare
+ * PreviousCurrentIterator returns the previous and current item as it iterators, perfect to compare
  * items that are stringed in a sequence such as historical or sequenced elements to compare to each other.
+ *
+ * Warning, this assumes that you have a previous and current. If you can't be sure that you have at least 2 items,
+ * use the CurrentNextIterator which allows for Next to be null.
  *
  * @package CrazyCodr\Iterators
  */
