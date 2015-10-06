@@ -20,7 +20,7 @@ class CurrentNextIteratorTest extends PHPUnit_Framework_TestCase
 				'values' => array_values($values)
 			];
 		}
-		$this->assertEquals($out, $result);
+		$this->assertSame($out, $result);
 	}
 
 	public function providesTestIterator() {

@@ -69,6 +69,11 @@ class CurrentNextIterator implements \Iterator
 		next($this->items);
 		$this->nextItem = current($this->items);
 		$this->nextKey = key($this->items);
+		if($this->nextItem === false)
+		{
+			$this->nextItem = null;
+			$this->nextKey = null;
+		}
 	}
 
 	/**
