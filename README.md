@@ -1,4 +1,4 @@
-[![Build Status](https://travis-ci.org/crazycodr/previous-current-iterator.svg)](https://travis-ci.org/crazycodr/previous-current-iterator)
+[![Build Status](https://travis-ci.org/crazycodr/previous-current-iterator.svg)](https://travis-ci.org/crazycodr/previous-current-iterator)[![Latest Stable Version](https://poser.pugx.org/crazycodr/previous-current-iterator/v/stable)](https://packagist.org/packages/crazycodr/previous-current-iterator) [![Total Downloads](https://poser.pugx.org/crazycodr/previous-current-iterator/downloads)](https://packagist.org/packages/crazycodr/previous-current-iterator) [![Latest Unstable Version](https://poser.pugx.org/crazycodr/previous-current-iterator/v/unstable)](https://packagist.org/packages/crazycodr/previous-current-iterator) [![License](https://poser.pugx.org/crazycodr/previous-current-iterator/license)](https://packagist.org/packages/crazycodr/previous-current-iterator)
 
 # Previous/Current iterator
 Allows iteration over an array but returns two items at a time stepping by one item at a time. Thus, the iterator for
