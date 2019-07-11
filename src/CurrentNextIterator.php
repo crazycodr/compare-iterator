@@ -12,93 +12,97 @@ namespace CrazyCodr\Iterators;
 class CurrentNextIterator implements \Iterator
 {
 
-	/**
-	 * Contains the items to iterate over
-	 *
-	 * @var array
-	 */
-	private $items = [];
+    /**
+     * Contains the items to iterate over
+     *
+     * @var array
+     */
+    private $items = [];
 
-	/**
-	 * Contains the current item (previous current) to compare with the next
-	 * @var mixed
-	 */
-	private $currentItem = null;
+    /**
+     * Contains the current item (previous current) to compare with the next
+     * @var mixed
+     */
+    private $currentItem = null;
 
-	/**
-	 * Contains the current key to compare with the current key
-	 * @var null
-	 */
-	private $currentKey = null;
+    /**
+     * Contains the current key to compare with the current key
+     * @var null
+     */
+    private $currentKey = null;
 
-	/**
-	 * Contains the next item (next current) to compare with the real current
-	 * @var mixed
-	 */
-	private $nextItem = null;
+    /**
+     * Contains the next item (next current) to compare with the real current
+     * @var mixed
+     */
+    private $nextItem = null;
 
-	/**
-	 * Contains the next key to compare with the current key
-	 * @var null
-	 */
-	private $nextKey = null;
+    /**
+     * Contains the next key to compare with the current key
+     * @var null
+     */
+    private $nextKey = null;
 
-	/**
-	 * @param array $data
-	 */
-	public function __construct(array $data) {
-		$this->items = $data;
-	}
+    /**
+     * @param array $data
+     */
+    public function __construct(array $data)
+    {
+        $this->items = $data;
+    }
 
-	/**
-	 * @inheritedDoc
-	 */
-	public function current() {
-		return [
-			'current' => $this->currentItem,
-			'next'  => $this->nextItem
-		];
-	}
+    /**
+     * @inheritedDoc
+     */
+    public function current()
+    {
+        return [
+            'current' => $this->currentItem,
+            'next'  => $this->nextItem
+        ];
+    }
 
-	/**
-	 * @inheritedDoc
-	 */
-	public function next() {
-		$this->currentItem = current($this->items);
-		$this->currentKey = key($this->items);
-		next($this->items);
-		$this->nextItem = current($this->items);
-		$this->nextKey = key($this->items);
-		if($this->nextItem === false)
-		{
-			$this->nextItem = null;
-			$this->nextKey = null;
-		}
-	}
+    /**
+     * @inheritedDoc
+     */
+    public function next()
+    {
+        $this->currentItem = current($this->items);
+        $this->currentKey = key($this->items);
+        next($this->items);
+        $this->nextItem = current($this->items);
+        $this->nextKey = key($this->items);
+        if ($this->nextItem === false) {
+            $this->nextItem = null;
+            $this->nextKey = null;
+        }
+    }
 
-	/**
-	 * @inheritedDoc
-	 */
-	public function key() {
-		return [
-			'previous' => $this->currentKey,
-			'current'  => $this->nextKey
-		];
-	}
+    /**
+     * @inheritedDoc
+     */
+    public function key()
+    {
+        return [
+            'previous' => $this->currentKey,
+            'current'  => $this->nextKey
+        ];
+    }
 
-	/**
-	 * @inheritedDoc
-	 */
-	public function valid() {
-		return $this->currentKey !== null;
-	}
+    /**
+     * @inheritedDoc
+     */
+    public function valid()
+    {
+        return $this->currentKey !== null;
+    }
 
-	/**
-	 * @inheritedDoc
-	 */
-	public function rewind() {
-		reset($this->items);
-		$this->next();
-	}
-
+    /**
+     * @inheritedDoc
+     */
+    public function rewind()
+    {
+        reset($this->items);
+        $this->next();
+    }
 }
